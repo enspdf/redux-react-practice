@@ -1,14 +1,22 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import { buyPokemonAction, returnPokemonAction } from "../redux/actions/gameShopAction";
 
 class BuyPokemon extends Component {
     render() {
         return (
             <div>
-                <button className="btn btn-dark btn-sm mb-2">Comprar Pokemon</button>
-                <button className="btn btn-dark btn-sm">Regresar Pokemon</button>
+                <button className="btn btn-dark btn-sm mb-2" onClick={() => this.props.buyPokemonAction(1)}>Comprar Pokemon</button>
+                <button className="btn btn-dark btn-sm" onClick={() => this.props.returnPokemonAction(1)}>Regresar Pokemon</button>
             </div>
         );
     };
 };
 
-export default BuyPokemon;
+const mapDispatchToProps = {
+    buyPokemonAction,
+    returnPokemonAction
+};
+
+export default connect(null, mapDispatchToProps)(BuyPokemon);
