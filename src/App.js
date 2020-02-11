@@ -9,6 +9,8 @@ import BuyPokemon from "./components/BuyPokemon";
 
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import PokemonSearch from "./components/search/PokemonSearch";
+import PokemonResult from "./components/search/PokemonResult";
 
 function App() {
   return (
@@ -31,6 +33,12 @@ function App() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="col-12 mt-4 border-top pt-3">
+            <PokemonSearch />
+          </div>
+          <div className="col-12">
+            <PokemonResult />
           </div>
         </div>
       </div>
