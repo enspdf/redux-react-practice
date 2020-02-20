@@ -28,7 +28,7 @@ export const fetchPokemon = value => {
   return dispatch => {
     dispatch(fetchPokemonRequest());
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${valor}`)
+      .get(`https://pokeapi.co/api/v2/pokemon/${value}`)
       .then(response => {
         dispatch(fetchPokemonSuccess([response.data]));
       })
